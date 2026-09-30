@@ -1,0 +1,133 @@
+# ======================== 配置层 ========================
+#
+# 职责: 集中管理全部常量与任务输入结构。
+# 依赖: 仅标准库（本模块是依赖图的叶子，禁止导入其他业务模块）。
+#
+# 说明:
+#   - 采集参数、浏览器参数、输出文件名均从原 link_collector_pagination.py
+#     中硬编码的位置提取而来，行为保持完全一致。
+#   - CollectConfig 是 GUI 与采集端之间唯一的契约：GUI 负责组装，
+#     collector 负责消费，两边互不感知。
+# ========================================================
+
+from dataclasses import dataclass, field
+from typing import List, Optional
+
+# ======================== UI 样式 ========================
+UI_COLORS = {
+    "background": "#F4F7FB",
+    "card": "#FFFFFF",
+    "card_alt": "#F8FAFC",
+    "border": "#E2E8F0",
+    "text": "#0F172A",
+    "text_secondary": "#475569",
+    "text_muted": "#94A3B8",
+    "primary": "#2563EB",
+    "primary_hover": "#1D4ED8",
+    "danger": "#DC2626",
+    "danger_light": "#FEF2F2",
+    "log_background": "#0F172A",
+    "log_panel": "#111827",
+    "log_text": "#D1D5DB",
+}
+
+UI_FONT = "Microsoft YaHei UI"
+MONO_FONT = "Consolas"
+
+# 窗口尺寸
+WINDOW_GEOMETRY = "960x780"
+WINDOW_MIN_SIZE = (860, 680)
+APP_TITLE = "详情页链接采集"
+APP_SUBTITLE = "从 Shopify 列表页自动提取产品链接"
+
+# 分类列表示例文案
+CATEGORY_PLACEHOLDER = (
+    "示例: Loungewear > Pajamas, https://example.com/collections/pajamas"
+)
+
+# ======================== 采集参数 ========================
+# 首页无链接时的重试次数与间隔
+MAX_RETRIES = 3
+RETRY_DELAY = 2.0
+
+# tab.get() 完成后额外等待页面稳定的时间
+PAGE_SETTLE_WAIT = 0.35
+
+# 页面上下文丢失（ContextLostError）后快速重试一次的等待时间
+CONTEXT_LOST_RETRY_DELAY = 0.8
+
+# JavaScript 执行失败的重试间隔
+JS_CONTEXT_LOST_DELAY = 0.6
+JS_OTHER_ERROR_DELAY = 0.3
+JS_DEFAULT_RETRIES = 2
+
+# ======================== 浏览器参数 ========================
+# 本地代理地址。设为 None 或空字符串表示直连（不传 --proxy-server）。
+# 原实现硬编码在 create_browser() 内部，此处提取为可配置项。
+PROXY_SERVER = "http://127.0.0.1:7897"
+
+# 本地调试端口随机区间（原实现: random.randint(9222, 9322)）
+PORT_RANGE = (9222, 9322)
+
+# 浏览器启动失败后的换端口重试次数
+BROWSER_START_RETRIES = 3
+
+# 关闭图片加载：只采集 HTML/JSON/链接，可明显减少列表页等待时间
+DISABLE_IMAGES = True
+
+# 使用隐身模式
+USE_INCOGNITO = True
+
+# ======================== 输出 ========================
+# 分类索引文件名（域名 → 分类标题 → 分类URL）
+LINK_INDEX_FILENAME = "links_index.json"
+
+# 恢复文件名中的标记（旧 XLSX 读取失败时另存，绝不覆盖原文件）
+RECOVERY_MARK = "recovery"
+
+# XLSX 表头
+XLSX_HEADERS = ["title", "link"]
+
+# 默认输出目录名（GUI 未选择保存路径时，回退到项目上级目录下的该子目录）
+DEFAULT_OUTPUT_DIRNAME = "output"
+
+
+# ======================== 数据结构 ========================
+@dataclass
+class CategoryItem:
+    """一个待采集的分类：标题 + 列表页 URL。"""
+
+    title: str
+    url: str
+
+
+@dataclass
+class CollectConfig:
+    """一次采集任务的全部输入。
+
+    由 GUI 校验并组装完成后交给 CollectorRunner，采集端只读取本结构，
+    不访问任何 tkinter 对象。
+    """
+
+    categories: List[CategoryItem] = field(default_factory=list)
+    output_dir: str = ""
+    # 0 表示不限制页数
+    max_pages: int = 0
+    # 空字符串表示走 HTML 正则模式，非空则走 XPath 模式
+    xpath: str = ""
+    # 浏览器参数（默认取本模块常量，GUI 可覆盖）
+    proxy: Optional[str] = PROXY_SERVER
+    port_range: tuple = PORT_RANGE
+    disable_images: bool = DISABLE_IMAGES
+
+    def summary(self) -> str:
+        """返回任务摘要文本，供日志开头打印。"""
+        lines = [
+            f"共 {len(self.categories)} 个分类",
+            f"最大页数: {self.max_pages if self.max_pages else '不限制'}",
+        ]
+        if self.xpath:
+            lines.append(f"XPath: {self.xpath}")
+        lines.append(f"保存目录: {self.output_dir}")
+        lines.append("采集模式: 纯分页")
+        return "\n".join(lines)

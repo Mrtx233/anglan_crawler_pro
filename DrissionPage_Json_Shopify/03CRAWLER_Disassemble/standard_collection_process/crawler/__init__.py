@@ -1,0 +1,1 @@
+"""Shopify standard collection process."""

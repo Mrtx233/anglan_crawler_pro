@@ -1,0 +1,16 @@
+# ================= Shopify 商品采集与转换工具依赖 =================
+# Python 版本: 3.12
+# 安装命令: pip install -r requirements.txt
+# 版本锁定依据: .venv 中已验证可运行的版本
+
+# ── 核心爬虫 ──
+scrapy==2.17.0                      # 商品详情页 JSON 采集框架
+DrissionPage==4.1.1.4               # 浏览器自动化（collection 链接采集、JSON 抓取）
+lxml==6.1.1                         # HTML 解析（link_collector / detail_link_GUI 使用）
+
+# ── 数据处理 ──
+pandas==2.3.3                       # 表格数据读写与格式转换（styles→Shopify→WP）
+openpyxl==3.1.5                     # Excel XLSX 读写
+
+# ── Scrapy 配套 ──
+itemadapter==0.13.1                 # Scrapy Item 与 pipeline 数据适配

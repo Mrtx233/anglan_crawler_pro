@@ -1,0 +1,106 @@
+{
+  "payload": {
+    "product": {
+      "id": 1,
+      "handle": "fixture",
+      "title": "Fixture Shirt",
+      "body_html": "<p>Comfort <a href=\"/x\">cotton</a><br/><img src=\"https://cdn.test/detail.jpg\"/></p>",
+      "options": [
+        {
+          "name": "Size",
+          "position": 1,
+          "values": [
+            "S",
+            "L"
+          ]
+        },
+        {
+          "name": "Color",
+          "position": 2,
+          "values": [
+            "Red",
+            "Blue",
+            "Green"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 101,
+          "position": 2,
+          "option1": "S",
+          "option2": "Red",
+          "price": "10.00",
+          "compare_at_price": "12.00",
+          "image_id": 11
+        },
+        {
+          "id": 102,
+          "position": 1,
+          "option1": "L",
+          "option2": "Blue",
+          "price": "20.00",
+          "compare_at_price": null,
+          "image_id": 12
+        }
+      ],
+      "images": [
+        {
+          "id": 11,
+          "position": 1,
+          "src": "https://cdn.test/1.jpg",
+          "variant_ids": [
+            101
+          ]
+        },
+        {
+          "id": 12,
+          "position": 2,
+          "src": "https://cdn.test/2.jpg",
+          "variant_ids": [
+            102
+          ]
+        },
+        {
+          "id": 13,
+          "position": 3,
+          "src": "https://cdn.test/3.jpg",
+          "variant_ids": []
+        }
+      ]
+    }
+  },
+  "product_rows": [
+    {
+      "title": "Category",
+      "name": "Fixture Shirt",
+      "price1": "20",
+      "price2": "20",
+      "styles1": "Color#Red&Size&S$10$12@https://cdn.test/1_600x600.jpg#Red&Size&L$10$12@https://cdn.test/1_600x600.jpg#Blue&Size&S$20$20@https://cdn.test/2_600x600.jpg#Blue&Size&L$20$20@https://cdn.test/2_600x600.jpg#Green&Size&S$20$20#Green&Size&L$20$20",
+      "styles2": "",
+      "styles3": "",
+      "src_links": "https://cdn.test/1_600x600.jpg#https://cdn.test/2_600x600.jpg#https://cdn.test/3_600x600.jpg",
+      "link-href": "https://shop.test/products/fixture",
+      "details": "<p>Comfort cotton<br><img src=\"https://cdn.test/detail.jpg\"></p>"
+    }
+  ],
+  "skipped_row": {
+    "title": "Category",
+    "name": "Fixture Shirt",
+    "price1": "20",
+    "price2": "20",
+    "styles1": "Color#Red&Size&S$10$12#Red&Size&L$10$12#Blue&Size&S$20$20@https://cdn.test/2_600x600.jpg#Blue&Size&L$20$20@https://cdn.test/2_600x600.jpg#Green&Size&S$20$20#Green&Size&L$20$20",
+    "styles2": "",
+    "styles3": "",
+    "src_links": "https://cdn.test/2_600x600.jpg",
+    "link-href": "https://shop.test/products/fixture",
+    "details": "<p>Comfort cotton<br><img src=\"https://cdn.test/detail.jpg\"></p>"
+  },
+  "csvs": {
+    "csv/fixture_Shopify_价格匹配.csv": "Link-Href,Handle,Title,Body (HTML),Collection,Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Option3 Name,Option3 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Google Shopping - Google Product Category,Google Shopping - Gender,Google Shopping - Age Group,Google Shopping - MPN,Google Shopping - AdWords Grouping,Google Shopping - AdWords Labels,Google Shopping - Condition,Google Shopping - Custom Product,Google Shopping - Custom Label 0,Google Shopping - Custom Label 1,Google Shopping - Custom Label 2,Google Shopping - Custom Label 3,Google Shopping - Custom Label 4,Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item,匹配价格\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,Fixture Shirt,\"<p>Comfort cotton<br><img src=\"\"https://cdn.test/detail.jpg\"\"></p>\",Category,Category,,,TRUE,Color,Red,Size,S,,,945VU-P75GP-184VU,0,shopify,999,deny,manual,8.99,10.79,TRUE,FALSE,,https://cdn.test/1_600x600.jpg,1,,FALSE,Fixture Shirt,Fixture Shirt,,,,,,,,,,,,,,https://cdn.test/1_600x600.jpg,kg,,,8.99\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Red,Size,L,,,862GZ-L89NB-352GZ,0,shopify,999,deny,manual,9.01,10.81,TRUE,FALSE,,https://cdn.test/2_600x600.jpg,2,,,,,,,,,,,,,,,,,,https://cdn.test/1_600x600.jpg,kg,,,9.01\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Blue,Size,S,,,816SI-W34CX-584SI,0,shopify,999,deny,manual,15.31,18.37,TRUE,FALSE,,https://cdn.test/3_600x600.jpg,3,,,,,,,,,,,,,,,,,,https://cdn.test/2_600x600.jpg,kg,,,15.31\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Blue,Size,L,,,835VO-P58OT-895VO,0,shopify,999,deny,manual,15.52,18.62,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,https://cdn.test/2_600x600.jpg,kg,,,15.52\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Green,Size,S,,,274DW-D64MY-955DW,0,shopify,999,deny,manual,15.78,18.94,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,,kg,,,15.78\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Green,Size,L,,,556SU-M42GA-654SU,0,shopify,999,deny,manual,15.95,19.14,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,,kg,,,15.95\n",
+    "csv/fixture_Shopify_原价.csv": "Link-Href,Handle,Title,Body (HTML),Collection,Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Option3 Name,Option3 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Google Shopping - Google Product Category,Google Shopping - Gender,Google Shopping - Age Group,Google Shopping - MPN,Google Shopping - AdWords Grouping,Google Shopping - AdWords Labels,Google Shopping - Condition,Google Shopping - Custom Product,Google Shopping - Custom Label 0,Google Shopping - Custom Label 1,Google Shopping - Custom Label 2,Google Shopping - Custom Label 3,Google Shopping - Custom Label 4,Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,Fixture Shirt,\"<p>Comfort cotton<br><img src=\"\"https://cdn.test/detail.jpg\"\"></p>\",Category,Category,,,TRUE,Color,Red,Size,S,,,945VU-P75GP-184VU,0,shopify,999,deny,manual,10,12,TRUE,FALSE,,https://cdn.test/1_600x600.jpg,1,,FALSE,Fixture Shirt,Fixture Shirt,,,,,,,,,,,,,,https://cdn.test/1_600x600.jpg,kg,,\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Red,Size,L,,,862GZ-L89NB-352GZ,0,shopify,999,deny,manual,10,12,TRUE,FALSE,,https://cdn.test/2_600x600.jpg,2,,,,,,,,,,,,,,,,,,https://cdn.test/1_600x600.jpg,kg,,\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Blue,Size,S,,,816SI-W34CX-584SI,0,shopify,999,deny,manual,20,20,TRUE,FALSE,,https://cdn.test/3_600x600.jpg,3,,,,,,,,,,,,,,,,,,https://cdn.test/2_600x600.jpg,kg,,\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Blue,Size,L,,,835VO-P58OT-895VO,0,shopify,999,deny,manual,20,20,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,https://cdn.test/2_600x600.jpg,kg,,\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Green,Size,S,,,274DW-D64MY-955DW,0,shopify,999,deny,manual,20,20,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,,kg,,\nhttps://shop.test/products/fixture,fixture-shirt-wc155fp,,,,,,,,Color,Green,Size,L,,,556SU-M42GA-654SU,0,shopify,999,deny,manual,20,20,TRUE,FALSE,,,,,,,,,,,,,,,,,,,,,,kg,,\n",
+    "csv/fixture_Shopify_未匹配到的价格.csv": "未匹配价格\n9.31\n9.33\n9.37\n9.63\n9.71\n9.72\n9.84\n9.86\n9.95\n9.99\n10.03\n10.05\n10.11\n10.13\n10.15\n10.35\n10.36\n10.38\n10.54\n10.63\n10.64\n10.66\n10.71\n10.78\n10.83\n10.94\n10.95\n10.99\n11.22\n11.36\n11.48\n11.65\n11.87\n11.95\n11.99\n12.22\n12.25\n12.36\n12.41\n12.87\n12.92\n12.95\n12.99\n13.02\n13.13\n13.14\n13.47\n13.69\n13.95\n13.99\n14.25\n14.32\n14.62\n14.83\n14.91\n14.95\n14.99\n15.99\n16.34\n16.53\n16.66\n16.77\n16.95\n16.99\n17.11\n17.34\n17.57\n17.95\n17.99\n18.62\n18.81\n18.84\n18.95\n18.99\n19.04\n19.25\n19.95\n19.99\n20.14\n20.19\n20.34\n20.68\n20.74\n20.95\n20.99\n21.3\n21.47\n21.74\n21.95\n21.99\n22.31\n22.34\n22.81\n22.95\n22.99\n23.14\n23.32\n23.95\n23.99\n24.22\n24.46\n24.63\n24.95\n24.99\n25.37\n25.95\n25.99\n26.18\n26.34\n26.95\n26.99\n27.31\n27.54\n27.95\n27.99\n28.11\n28.95\n28.99\n29.0\n29.31\n29.95\n29.99\n30.54\n30.95\n30.99\n31.26\n31.52\n31.95\n31.99\n32.14\n32.24\n32.95\n32.99\n33.62\n33.84\n33.95\n33.99\n34.18\n34.62\n34.95\n34.99\n35.0\n35.14\n35.33\n35.95\n35.99\n36.47\n36.95\n36.99\n37.21\n37.95\n37.99\n38.14\n38.52\n38.95\n38.99\n39.0\n39.54\n39.95\n39.99\n40.02\n40.15\n40.95\n40.99\n41.32\n41.95\n41.99\n42.51\n42.95\n42.99\n43.16\n43.95\n43.99\n44.82\n44.95\n44.99\n45.17\n45.95\n45.99\n46.57\n47.82\n48.36\n49.0\n49.31\n50.03\n50.13\n50.81\n55.0\n59.0\n69.0\n79.0\n85.0\n89.0\n99.0\n109.0\n119.0\n129.0\n189.0\n219.0\n259.0\n299.0\n319.0\n349.0\n369.0\n399.0\n459.0\n499.0\n519.0\n599.0\n",
+    "csv/wp-fixture/wp-fixture_Shopify_价格匹配.csv": "Type,SKU,Name,Published,Visibility in catalog,Description,In stock?,Stock,Sale price,Regular price,Categories,Images,Parent,Position,Attribute 1 name,Attribute 1 value(s),Attribute 1 visible,Attribute 1 global,Attribute 2 name,Attribute 2 value(s),Attribute 2 visible,Attribute 2 global,Attribute 3 name,Attribute 3 value(s),Attribute 3 visible,Attribute 3 global\nvariable,SKU46888117,Fixture Shirt,1,visible,\"<p>Comfort cotton<br><img src=\"\"https://cdn.test/detail.jpg\"\"></p>\",1,99999,,,Category,\"https://cdn.test/1_600x600.jpg,https://cdn.test/2_600x600.jpg,https://cdn.test/3_600x600.jpg\",,0,Color,\"Red,Blue,Green\",1,1,Size,\"S,L\",1,1,,,,\nvariation,945VU-P75GP-184VU,\"Fixture Shirt-Red,S\",1,visible,,1,99999,8.99,10.79,Category,https://cdn.test/1_600x600.jpg,SKU46888117,1,Color,Red,,1,Size,S,,1,,,,\nvariation,862GZ-L89NB-352GZ,\"Fixture Shirt-Red,L\",1,visible,,1,99999,9.01,10.81,Category,https://cdn.test/1_600x600.jpg,SKU46888117,2,Color,Red,,1,Size,L,,1,,,,\nvariation,816SI-W34CX-584SI,\"Fixture Shirt-Blue,S\",1,visible,,1,99999,15.31,18.37,Category,https://cdn.test/2_600x600.jpg,SKU46888117,3,Color,Blue,,1,Size,S,,1,,,,\nvariation,835VO-P58OT-895VO,\"Fixture Shirt-Blue,L\",1,visible,,1,99999,15.52,18.62,Category,https://cdn.test/2_600x600.jpg,SKU46888117,4,Color,Blue,,1,Size,L,,1,,,,\nvariation,274DW-D64MY-955DW,\"Fixture Shirt-Green,S\",1,visible,,1,99999,15.78,18.94,Category,,SKU46888117,5,Color,Green,,1,Size,S,,1,,,,\nvariation,556SU-M42GA-654SU,\"Fixture Shirt-Green,L\",1,visible,,1,99999,15.95,19.14,Category,,SKU46888117,6,Color,Green,,1,Size,L,,1,,,,\n",
+    "csv/wp-fixture/wp-fixture_Shopify_原价.csv": "Type,SKU,Name,Published,Visibility in catalog,Description,In stock?,Stock,Sale price,Regular price,Categories,Images,Parent,Position,Attribute 1 name,Attribute 1 value(s),Attribute 1 visible,Attribute 1 global,Attribute 2 name,Attribute 2 value(s),Attribute 2 visible,Attribute 2 global,Attribute 3 name,Attribute 3 value(s),Attribute 3 visible,Attribute 3 global\nvariable,SKU46888117,Fixture Shirt,1,visible,\"<p>Comfort cotton<br><img src=\"\"https://cdn.test/detail.jpg\"\"></p>\",1,99999,,,Category,\"https://cdn.test/1_600x600.jpg,https://cdn.test/2_600x600.jpg,https://cdn.test/3_600x600.jpg\",,0,Color,\"Red,Blue,Green\",1,1,Size,\"S,L\",1,1,,,,\nvariation,945VU-P75GP-184VU,\"Fixture Shirt-Red,S\",1,visible,,1,99999,10,12,Category,https://cdn.test/1_600x600.jpg,SKU46888117,1,Color,Red,,1,Size,S,,1,,,,\nvariation,862GZ-L89NB-352GZ,\"Fixture Shirt-Red,L\",1,visible,,1,99999,10,12,Category,https://cdn.test/1_600x600.jpg,SKU46888117,2,Color,Red,,1,Size,L,,1,,,,\nvariation,816SI-W34CX-584SI,\"Fixture Shirt-Blue,S\",1,visible,,1,99999,20,20,Category,https://cdn.test/2_600x600.jpg,SKU46888117,3,Color,Blue,,1,Size,S,,1,,,,\nvariation,835VO-P58OT-895VO,\"Fixture Shirt-Blue,L\",1,visible,,1,99999,20,20,Category,https://cdn.test/2_600x600.jpg,SKU46888117,4,Color,Blue,,1,Size,L,,1,,,,\nvariation,274DW-D64MY-955DW,\"Fixture Shirt-Green,S\",1,visible,,1,99999,20,20,Category,,SKU46888117,5,Color,Green,,1,Size,S,,1,,,,\nvariation,556SU-M42GA-654SU,\"Fixture Shirt-Green,L\",1,visible,,1,99999,20,20,Category,,SKU46888117,6,Color,Green,,1,Size,L,,1,,,,\n"
+  }
+}
